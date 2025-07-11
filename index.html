@@ -7,7 +7,6 @@
         background: #000000;
         color: #000777;
         font-family: 'Schoolbell';
-        display: inline-block;
         position: relative;
     }
     ::-webkit-scrollbar {
@@ -19,41 +18,42 @@
         -webkit-transition: ease-in-out 777ms;
     }
     a:hover {
-        color: #000000;
+        color: #000777;
     }
-    .container { 
-    display: flex;
-    width: 777px;
-    height: 777px;
-    margin-left: 300px;
+    .sillycontainer { 
+        display: flex;
+        flex-direction: row;
+        margin-left: 469px;
+        margin-top: 170px;
+        width: 400px;
+        height: 325px;
     }
-    .everything { 
-    font-size: 0; 
-    visibility: hidden; 
-    -webkit-transition: ease-in-out 777ms;
-    padding: 220px;
-    } 
-    .container:hover .everything { 
-    font-size: 20px;
-    visibility: visible;
-    -webkit-transition: ease-in-out 777ms;
+    .sillybox {
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        padding: 10px;
+        margin: 50px;
     }
 </style>
 
 <html>
+    <title>meow</title>
     <body>
-        <img src="https://raw.githubusercontent.com/merbi7/web/refs/heads/main/merl.gif" style="height: 150px; padding-left: 600px; padding-top: 100px; position: absolute;">
-        <div class="container">
-            <center>
-                <div class="everything">
+        <img src="https://raw.githubusercontent.com/merbi7/web/refs/heads/main/merl.gif" style="height: 150px; position: absolute; margin-left: 590px; margin-top: -70px;">    
+        <div class="sillycontainer">
+            <div class="sillybox">
+                <center>
                     <h1>
                         not a lot's here yet!
                     </h1>
                     <a href="https://artfight.net/~tobes">artfight</a>
-                    |
+                    <br>
                     <a href="https://www.lioden.com/territory.php?id=284672">lioden</a>
-                </div>
-            </center>
-        </div>
+                    <br>
+                    <a href="./recs.html">recs</a>
+                </center>
+            </div>
+        </div>   
     </body>
 </html>
