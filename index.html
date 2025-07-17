@@ -35,6 +35,26 @@
         padding: 10px;
         margin: 50px;
     }
+    #music {
+        position: absolute;
+        background-color: rgba(0,0,0,0.1);
+        border-radius: 7px;
+        text-align: center;
+        height: 250px;
+        width: 350px;
+        overflow: scroll;
+        border: 1px dashed #000777;
+        z-index: 777;
+        right: 50px;
+        bottom: 300px;
+    }
+    #header {
+        padding: 10px;
+        cursor: move;
+        z-index: 10;
+        background-color: #000777;
+        color: #fff;
+    }
 </style>
 
 <html>
@@ -50,10 +70,84 @@
                     <a href="https://artfight.net/~tobes">artfight</a>
                     <br>
                     <a href="https://www.lioden.com/territory.php?id=284672">lioden</a>
-                    <br>
-                    <a href="./recs.html">recs</a>
                 </center>
             </div>
         </div>   
-    </body>
+    <div id="music">
+  <div id="header">songs that make the tobes</div>
+  <p>
+                    1. free by florence + the machine
+                    <br>
+                    <audio controls>
+                        <source src="f+m.mp3" type="audio/mpeg">
+                    </audio>
+                    <br>
+                    <br>
+                    2. lost river by murder by death
+                    <br>
+                    <audio controls>
+                        <source src="mbd.mp3" type="audio/mpeg">
+                    </audio>
+                    <br>
+                    <br>
+                    3. test
+                    <br>
+                    audio
+                    <br>
+                    <br>
+                    4. test
+                    <br>
+                    audio
+                    <br>
+                    <br>
+                    5. test
+                    <br>
+                    audio
+                    <br>
+                    <br>
+                    6. test
+                    <br>
+                    audio
+                    <br>
+                    <br>
+                    7. test
+                    <br>
+                    audio
+                    </p>
+</div>
+</body>
+    <script>
+dragElement(document.getElementById("music"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  elmnt.onmousedown = dragMouseDown;
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+
 </html>
